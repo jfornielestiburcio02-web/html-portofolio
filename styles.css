@@ -21,15 +21,48 @@
 }
 
 /* ESTELA GIRANDO + BOTANDO */
+/* ESTELA BLANCA ELEGANTE */
 .estela {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    border: 6px solid transparent;
-    border-top: 6px solid #6a00ff;
-    animation: girar 1s linear infinite, botar 0.8s ease-in-out infinite;
-    margin-bottom: 25px;
+    position: relative;
+    width: 80px;
+    height: 80px;
 }
+
+.estela span {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 3px solid rgba(255,255,255,0.8);
+    animation: flotar 1.6s ease-in-out infinite;
+}
+
+/* Capas */
+.estela span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.estela span:nth-child(2) {
+    inset: 8px;
+    animation-delay: 0.2s;
+    opacity: 0.6;
+}
+
+.estela span:nth-child(3) {
+    inset: 16px;
+    animation-delay: 0.4s;
+    opacity: 0.4;
+}
+
+/* Animación suave */
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-14px) scale(1.05);
+    }
+}
+
 
 /* BARRA DE CARGA */
 .barra {
